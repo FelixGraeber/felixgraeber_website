@@ -1,101 +1,123 @@
 import Image from "next/image";
+import Link from "next/link";
+import { MainLayout } from "@/components/layout/main-layout";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <MainLayout>
+      {/* Hero Section */}
+      <section className="flex flex-col md:flex-row gap-8 md:gap-16 items-center py-12">
+        <div className="flex-1 space-y-6">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+            Hi, I'm <span className="text-primary">Felix Graeber</span>
+          </h1>
+          <p className="text-xl text-neutral-600 dark:text-neutral-400">
+            Building innovative digital products and experiences.
+          </p>
+          <div className="flex gap-4 pt-4">
+            <Button asChild>
+              <Link href="/projects">View My Work</Link>
+            </Button>
+            <Button variant="outline" asChild>
+              <Link href="/about">About Me</Link>
+            </Button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="flex-1 flex justify-center md:justify-end">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-neutral-100">
+            {/* Placeholder for profile image */}
+            <div className="absolute inset-0 flex items-center justify-center text-neutral-400">
+              Profile Image Placeholder
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Separator className="my-12" />
+
+      {/* About Section */}
+      <section className="py-12">
+        <h2 className="text-3xl font-bold mb-8">About Me</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div>
+            <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-4">
+              I'm a passionate professional focused on creating innovative digital solutions. With expertise in web development and digital product design, I bring ideas to life through clean code and thoughtful user experiences.
+            </p>
+            <p className="text-lg text-neutral-600 dark:text-neutral-400">
+              My approach combines technical excellence with business acumen, ensuring that the products I build not only function flawlessly but also deliver real value.
+            </p>
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold">Skills & Expertise</h3>
+            <div className="flex flex-wrap gap-2">
+              {["Web Development", "React", "TypeScript", "Next.js", "UI/UX Design", "Product Strategy"].map((skill) => (
+                <span key={skill} className="px-3 py-1 bg-neutral-100 dark:bg-neutral-800 rounded-full text-sm">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="mt-8">
+          <Button variant="outline" asChild>
+            <Link href="/about">Learn More About Me</Link>
+          </Button>
+        </div>
+      </section>
+
+      <Separator className="my-12" />
+
+      {/* Featured Projects Section */}
+      <section className="py-12">
+        <h2 className="text-3xl font-bold mb-8">Featured Project</h2>
+        <Card className="overflow-hidden">
+          <div className="grid md:grid-cols-2">
+            <div className="bg-neutral-100 dark:bg-neutral-800 min-h-[300px] flex items-center justify-center">
+              <div className="text-neutral-400">BuyEuropean.io Screenshot</div>
+            </div>
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-bold mb-2">BuyEuropean.io</h3>
+              <p className="text-neutral-600 dark:text-neutral-400 mb-6">
+                A marketplace connecting consumers with authentic European products, making it easy to discover and purchase quality goods from across Europe.
+              </p>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold mb-2">Key Features</h4>
+                  <ul className="list-disc pl-5 space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <li>Curated selection of authentic European products</li>
+                    <li>Secure payment processing and order tracking</li>
+                    <li>Vendor verification and quality assurance</li>
+                    <li>Personalized recommendations based on preferences</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-2">Technologies</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {["React", "Node.js", "MongoDB", "AWS", "Stripe"].map((tech) => (
+                      <span key={tech} className="px-3 py-1 bg-neutral-100 dark:bg-neutral-800 rounded-full text-sm">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="mt-8">
+                <Button asChild>
+                  <Link href="/projects/buyeuropean">View Project Details</Link>
+                </Button>
+              </div>
+            </CardContent>
+          </div>
+        </Card>
+        <div className="mt-8 text-center">
+          <Button variant="outline" asChild>
+            <Link href="/projects">View All Projects</Link>
+          </Button>
+        </div>
+      </section>
+    </MainLayout>
   );
 }
