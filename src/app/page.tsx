@@ -28,10 +28,13 @@ export default function Home() {
         </div>
         <div className="flex-1 flex justify-center md:justify-end">
           <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-neutral-100">
-            {/* Placeholder for profile image */}
-            <div className="absolute inset-0 flex items-center justify-center text-neutral-400">
-              Profile Image Placeholder
-            </div>
+            <Image
+              src="/images/profile.jpg"
+              alt="Felix Graeber"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
       </section>
