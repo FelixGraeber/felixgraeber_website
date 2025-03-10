@@ -8,7 +8,7 @@ export function Footer() {
       <Separator className="mb-6" />
       <div className="flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="text-sm text-neutral-500">
-          © {new Date().getFullYear()} Felix Graeber. All rights reserved.
+          {new Date().getFullYear()} Felix Graeber. All rights reserved.
         </div>
         <div className="flex gap-6">
           <Link 
@@ -20,7 +20,7 @@ export function Footer() {
             LinkedIn
           </Link>
           <Link 
-            href="https://github.com" 
+            href="https://github.com/FelixGraeber" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
@@ -28,10 +28,16 @@ export function Footer() {
             GitHub
           </Link>
           <Link 
-            href="mailto:contact@example.com"
+            href="mailto:contact@invoice-converter.com"
             className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
           >
             Contact
+          </Link>
+          <Link 
+            href="/imprint"
+            className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+          >
+            Imprint
           </Link>
         </div>
       </div>

@@ -22,7 +22,7 @@ export default function Home() {
               <Link href="/projects">View My Work</Link>
             </Button>
             <Button variant="outline" asChild>
-              <Link href="/about">About Me</Link>
+              <Link href="/#about">About Me</Link>
             </Button>
           </div>
         </div>
@@ -39,7 +39,7 @@ export default function Home() {
       <Separator className="my-12" />
 
       {/* About Section */}
-      <section className="py-12">
+      <section className="py-12" id="about">
         <h2 className="text-3xl font-bold mb-8">About Me</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
@@ -63,7 +63,7 @@ export default function Home() {
         </div>
         <div className="mt-8">
           <Button variant="outline" asChild>
-            <Link href="/about">Learn More About Me</Link>
+            <Link href="/#about" scroll={false}>Learn More About Me</Link>
           </Button>
         </div>
       </section>
